@@ -76,8 +76,8 @@ public class InstructionMemory {
 			System.out.println("Accessing next instruction with PC " + pc);
 			String key = Integer.toBinaryString(pc);
 			Instruction i = memory.get(key);
-			this.pc = pc +4;
-			System.out.println("PC is incremented by 4 , and is now " + pc);
+			//this.pc = pc +4;
+		//	System.out.println("PC is incremented by 4 , and is now " + pc);
 			return i;
 		}
 		

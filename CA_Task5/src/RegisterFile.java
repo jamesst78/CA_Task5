@@ -9,9 +9,9 @@ public class RegisterFile {
 	Register writeRegister;
 	Register zeroRegister;
 	boolean writeflag;
-	String readData1;
-	String readData2;
-	String writeData;
+	public  String readData1;
+	public  String readData2;
+	public  String writeData;
 	
 	public RegisterFile() {
 		this.registers = new Register[32];
@@ -22,6 +22,7 @@ public class RegisterFile {
 			
 		}
 		this.zeroRegister = registers[31];
+		this.zeroRegister.theRegister = "0";
 		this.writeflag = false;
 		System.out.println("RegisterFile is created successfully of size 32 ");
 	}

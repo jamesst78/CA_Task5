@@ -20,6 +20,7 @@ public class MainControl {
 					MemRead=false;
 					MemWrite=false;
 					PCSrc=false;
+					break;
 			
 		
 		case("lw"):	RegDst=false;
@@ -29,6 +30,7 @@ public class MainControl {
 		MemRead=true;
 		MemWrite=false;
 		PCSrc=false;
+		break;
 		
 		
 		case("sw"):	RegDst=false;
@@ -38,7 +40,7 @@ public class MainControl {
 		MemRead=false;
 		MemWrite=true;
 		PCSrc=false;
-		
+		break;
 		
 		case("beq"): RegDst=false;
 		ALUSrc=false;
@@ -47,7 +49,7 @@ public class MainControl {
 		MemRead=false;
 		MemWrite=false;
 		PCSrc=true;
-				
+		break;
 
 		}
 	}

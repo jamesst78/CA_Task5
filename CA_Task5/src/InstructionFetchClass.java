@@ -16,6 +16,12 @@ public class InstructionFetchClass {
 		return i;
 	}
 	
+	public Instruction InstFetchNext() {
+		Instruction i =	this.IMemory.getNextInstruction();
+		System.out.println("Instruction retrieved " + i.getBits());
+		return (i);
+	}
+	
 	public void ProgCount(boolean BEQ, String address) {
 		//TODO: Refine this Method
 		//TODO: Check if after decoding && Excuting if the instruction is BEQ successfully or not , if yes , target address = pc
@@ -25,7 +31,7 @@ public class InstructionFetchClass {
 		}
 		else {
 		IMemory.pc = IMemory.pc +4;
-		System.out.println("Pc incremented by 4 normally");
+		System.out.println("Pc incremented by 4 normally and is now " + IMemory.pc);
 		}
 	}
 

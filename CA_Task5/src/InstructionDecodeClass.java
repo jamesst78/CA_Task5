@@ -52,6 +52,9 @@ public class InstructionDecodeClass {
 			}
 		
 		}
+		
+		readData1 = readReg1.theRegister;
+		readData2 = readReg2.theRegister;
 		RegFile.readData1 = readData1;
 		RegFile.readData2 = readData2;
 		RegFile.readRegister1 = readReg1;
@@ -60,10 +63,10 @@ public class InstructionDecodeClass {
 		//ONLY FOR R Type
 		RegFile.writeRegister = writeReg;
 		
-		readData1 = readReg1.theRegister;
-		System.out.println("ReadData1 is : " + readData1 +" and in Register of ID " + readReg1.RegID);
-		readData2 = readReg1.theRegister;
-		System.out.println("ReadData2 is : " + readData2 +" and in Register of ID " + readReg2.RegID);
+		
+		System.out.println("ReadData1 is : " + RegFile.readData1 +" and in Register of ID " + readReg1.RegID);
+		
+		System.out.println("ReadData2 is : " + RegFile.readData2 +" and in Register of ID " + readReg2.RegID);
 
 		Maincontrol.type = this.currentInstructionType;
 		AluControl.ALUop = this.ALUop;
@@ -103,16 +106,17 @@ public class InstructionDecodeClass {
 				 readReg2 = this.RegFile.registers[i];
 			}
 		}
-			
+		readData1 = readReg1.theRegister;	
+		readData2 = readReg2.theRegister;
 		RegFile.readData1 = readData1;
 		RegFile.readData2 = readData2;
 		RegFile.readRegister1 = readReg1;
 		RegFile.readRegister2 = readReg2;
 		
-		readData1 = readReg1.theRegister;
-		System.out.println("ReadData1 is : " + readData1 +" and in Register of ID " + readReg1.RegID);
-		readData2 = readReg1.theRegister;
-		System.out.println("ReadData2 is : " + readData2 +" and in Register of ID " + readReg2.RegID);
+		
+		System.out.println("ReadData1 is : " + RegFile.readData1 +" and in Register of ID " + readReg1.RegID);
+		
+		System.out.println("ReadData2 is : " + RegFile.readData2 +" and in Register of ID " + readReg2.RegID);
 		
 		this.extendedIntermediate=this.SignExtend(Iti);
 		Maincontrol.type = this.currentInstructionType;

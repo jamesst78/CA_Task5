@@ -15,37 +15,39 @@ public class ALU {
 
 	}
 	
-	public static void  ALUEvaluator(String op , int operand1 , int operand2) {
+	public  int  ALUEvaluator(String op , int operand1 , int operand2) {
 		
-		ALU alu = new ALU();
+		
 		switch(op) {
 		
-		case("0000") : alu.ANDOp(operand1,operand2); break;
-		case("0001") : alu.OROp(operand1, operand2); break;
-		case("0010") : alu.addOp(operand1, operand2);break;
-		case("0110") : alu.subOp(operand1, operand2);break;
-		case("0111") : alu.sltOp(operand1, operand2);break;
-		case("1100") : alu.NOR(operand1, operand2);break;
+		
+		case("0000") :return ANDOp(operand1,operand2); 
+		case("0001") : return OROp(operand1, operand2); 
+		case("0010") : return addOp(operand1, operand2);
+		case("0110") : return subOp(operand1, operand2);
+		case("0111") : return sltOp(operand1, operand2);
+		case("1100") : return NOR(operand1, operand2);
 		
 		}
+		return 0;
 		
 	}
-	public static String  ALUEvaluator(String op , String operand1 , String operand2) {
+	public  String  ALUEvaluator(String op , String operand1 , String operand2) {
 		
-		ALU alu = new ALU();
+		
 		switch(op) {
 		
-		case("0000") : return alu.ANDOp(signExtend(operand1),signExtend(operand2));
+		case("0000") : return ANDOp(signExtend(operand1),signExtend(operand2));
 		
-		case("0001") : return alu.OROp(signExtend(operand1), signExtend(operand2));
+		case("0001") : return OROp(signExtend(operand1), signExtend(operand2));
 		
-		case("0010") : return alu.addOp(signExtend(operand1), signExtend(operand2));
+		case("0010") : return addOp(signExtend(operand1), signExtend(operand2));
 		
-		case("0110") : return alu.subOp(signExtend(operand1), signExtend(operand2));
+		case("0110") : return subOp(signExtend(operand1), signExtend(operand2));
 		
-		case("0111") : return alu.sltOp(signExtend(operand1), signExtend(operand2));
+		case("0111") : return sltOp(signExtend(operand1), signExtend(operand2));
 		
-		case("1100") : return  alu.NOR(signExtend(operand1), signExtend(operand2));
+		case("1100") : return  NOR(signExtend(operand1), signExtend(operand2));
 		
 		}
 		System.out.println("Failed ALU Evaluator");
@@ -267,34 +269,34 @@ public class ALU {
 	}
 	
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("To proceed using strings press s , to proceed using ints press i");
-		String s = sc.nextLine();
-		if(s.equals("s")) {
-			System.out.println("Enter operation opcode");
-			String op3 = sc.nextLine();
-		System.out.println("enter op1 as a string");
-		String op1 = sc.nextLine();
-		System.out.println("Enter op2 as a string");
-		String op2 = sc.nextLine();
-		
-		ALUEvaluator(op3, op1, op2);
-		}
-		if(s.equals("i")) {
-			System.out.println("Enter operation opcode");
-			String op3 = sc.nextLine();
-		System.out.println("enter op1 as int");
-		int op1 = sc.nextInt();
-		System.out.println("Enter op2 as int");
-		int op2 = sc.nextInt();
-		
-		ALUEvaluator(op3, op1, op2);
-		
-
-		}
+//	public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+//		
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("To proceed using strings press s , to proceed using ints press i");
+//		String s = sc.nextLine();
+//		if(s.equals("s")) {
+//			System.out.println("Enter operation opcode");
+//			String op3 = sc.nextLine();
+//		System.out.println("enter op1 as a string");
+//		String op1 = sc.nextLine();
+//		System.out.println("Enter op2 as a string");
+//		String op2 = sc.nextLine();
+//		
+//		ALUEvaluator(op3, op1, op2);
+//		}
+//		if(s.equals("i")) {
+//			System.out.println("Enter operation opcode");
+//			String op3 = sc.nextLine();
+//		System.out.println("enter op1 as int");
+//		int op1 = sc.nextInt();
+//		System.out.println("Enter op2 as int");
+//		int op2 = sc.nextInt();
+//		
+//		ALUEvaluator(op3, op1, op2);
+//		
+//
+//		}
 		
 		
 	
@@ -305,4 +307,4 @@ public class ALU {
 	
 	
 
-}
+

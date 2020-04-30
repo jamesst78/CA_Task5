@@ -22,9 +22,14 @@ public class ExecutionClass {
 		
 		if(ALUSrc) {
 			ALUResult = Alu.ALUEvaluator(ALU4bitoperation, RegFile.readData1,extendedIntermediate );
+			IFC.ProgCount(false, "");
+		}
+		else {
+			
+			ALUResult = Alu.ALUEvaluator(ALU4bitoperation, RegFile.readData1, RegFile.readData2);
 			if(currentInstructionType.equals("beq")) {
 				if(Alu.Z) {
-					BranchAddressResult = ALUResult;
+					BranchAddressResult = Integer.toBinaryString(Alu.ALUEvaluator("0010", IFC.IMemory.pc, Integer.parseInt(extendedIntermediate, 2)));
 				System.out.println("Should branch successfully into Address " + BranchAddressResult);
 				IFC.ProgCount(true, BranchAddressResult);
 				}
@@ -33,10 +38,10 @@ public class ExecutionClass {
 					IFC.ProgCount(false, BranchAddressResult);
 				}
 			}
-		}
-		else {
-			ALUResult = Alu.ALUEvaluator(ALU4bitoperation, RegFile.readData1, RegFile.readData2);
-			IFC.ProgCount(false, "");
+			else {
+				IFC.ProgCount(false, "");
+			}
+			
 		}
 	}
 	
